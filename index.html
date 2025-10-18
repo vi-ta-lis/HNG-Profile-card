@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vitalis' Profile Card</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <article data-testid="test-profile-card">
+      <div class="card-header"></div>
+
+      <div class="card-content">
+        <div class="profile-avatar-section">
+          <figure data-testid="test-user-avatar">
+            <img
+              src="/img/the-head-ss.jpg"
+              alt="Profile picture of Alex Johnson"
+              data-testid="test-user-avatar"
+            />
+          </figure>
+        </div>
+
+        <div class="profile-info">
+          <h2 data-testid="test-user-name">Vitalis Kalu</h2>
+          <p data-testid="test-user-bio">
+            Software engineer building modern, accessible front-end applications
+            with ReactJs & NextJS.
+          </p>
+
+          <div class="time-stamp">
+            Current Time: <time data-testid="test-user-time"></time>
+          </div>
+        </div>
+
+        <nav
+          data-testid="test-user-social-links"
+          aria-label="Social media links"
+        >
+          <ul data-testid="test-user-social-links">
+            <li>
+              <a
+                href="https://github.com/vi-ta-lis"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="test-user-social-github"
+                aria-label="Visit GitHub profile"
+                >GitHub</a
+              >
+            </li>
+            <li>
+              <a
+                href="http://www.linkedin.com/in/vitalis-kalu"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="test-user-social-linkedin"
+                aria-label="Visit LinkedIn profile"
+                >LinkedIn</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="divider"></div>
+
+        <section>
+          <h3>Hobbies</h3>
+          <ul data-testid="test-user-hobbies">
+            <li>Coding</li>
+            <li>Hiking</li>
+            <li>Photography</li>
+            <li>Gaming</li>
+            <li>Reading</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Dislikes</h3>
+          <ul data-testid="test-user-dislikes">
+            <li>Bugs</li>
+            <li>Spam</li>
+            <li>Bad UX</li>
+            <li>Slow Internet</li>
+          </ul>
+        </section>
+      </div>
+    </article>
+  </body>
+
+  <script src="script.js"></script>
+</html>
+
+
