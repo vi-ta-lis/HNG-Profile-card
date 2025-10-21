@@ -10,9 +10,16 @@ body {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
   display: flex;
+  margin-top: 4rem;
   align-items: center;
   justify-content: center;
   padding: 1rem;
+}
+
+.nav-links a.active {
+  color: #667eea;
+  font-weight: 700;
+  border-bottom: 2px solid #667eea;
 }
 
 article[data-testid="test-profile-card"] {
@@ -30,11 +37,11 @@ article[data-testid="test-profile-card"]:hover {
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
 }
 
-.card-header {
+/* .card-header {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   height: 120px;
   position: relative;
-}
+} */
 
 .card-content {
   padding: 2rem 2rem 1.5rem;
@@ -44,7 +51,7 @@ article[data-testid="test-profile-card"]:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -60px;
+  margin-top: 60px;
   margin-bottom: 1.5rem;
 }
 
@@ -250,5 +257,200 @@ li:hover {
     width: 36px;
     height: 36px;
     font-size: 0.8rem;
+  }
+}
+
+//New styles
+
+:root {
+  --nav-height: 64px; /* Adjust this if your navbar looks too tall or short */
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  /* width: 100%; */
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 8px 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 5px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 1000;
+}
+
+.nav-logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #667eea;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 8px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #2d3748;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  color: #fff;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transform: translateY(-2px);
+}
+
+/* ===== GENERAL PAGE CONTENT SPACING ===== */
+.about-page,
+.contact-page,
+article[data-testid="test-profile-card"] {
+  margin-top: calc(var(--nav-height) + 1.5rem);
+}
+
+/* ===== ABOUT PAGE ===== */
+.about-page {
+  max-width: 800px;
+  margin: calc(var(--nav-height) + 1.5rem) auto 2rem;
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-page section {
+  margin-bottom: 1.5rem;
+}
+
+.about-page h2 {
+  color: #667eea;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.about-page p {
+  color: #2d3748;
+  line-height: 1.6;
+}
+
+/* ===== CONTACT PAGE ===== */
+.contact-page {
+  /* max-width: 500px; */
+  width: 60%;
+  margin: calc(var(--nav-height) + 1.5rem) auto 2rem;
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-page h2 {
+  color: #667eea;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+label {
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+input,
+textarea {
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e0;
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid #667eea;
+  border-color: #667eea;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background: #5568d3;
+}
+
+.error {
+  color: #e53e3e;
+  font-size: 0.85rem;
+  height: 1rem;
+}
+
+.success {
+  color: #38a169;
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 72px;
+  }
+
+  .navbar {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0.8rem 1.2rem;
+    align-items: center;
+  }
+
+  .contact-page {
+    width: 100%;
+  }
+
+  .body {
+    margin-top: 2px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .about-page,
+  .contact-page,
+  article[data-testid="test-profile-card"] {
+    margin-top: calc(var(--nav-height) + 1rem);
+    padding: 1.5rem;
   }
 }
